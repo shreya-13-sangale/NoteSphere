@@ -1,0 +1,22 @@
+# Maven build files
+target/
+
+# Generated manifest
+META-INF/
+
+# Local note data
+notes.dat
+
+# Backup files
+backups/
+
+# IDE files
+.vscode/
+.idea/
+
+# Compiled Java files
+*.class
+
+# OS files
+.DS_Store
+Thumbs.db
