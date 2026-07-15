@@ -22,6 +22,26 @@
 - ⌨️ Keyboard shortcuts
 - 📈 Note statistics dashboard
 
+## 📸 Screenshots
+
+### 🔒 Secure Lock Screen
+![NoteSphere Lock Screen](screenshots/lock-screen.png)
+
+### 📝 Main Dashboard
+![NoteSphere Dashboard](screenshots/dashboard.png)
+
+### ➕ Add New Note
+![Add New Note](screenshots/add-note.png)
+
+### 📊 Analytics Dashboard
+![NoteSphere Analytics](screenshots/analytics.png)
+
+### 🗑️ Trash Management
+![NoteSphere Trash](screenshots/trash.png)
+
+### ⚙️ Settings Menu
+![NoteSphere Settings](screenshots/settings.png)
+
 ## 🛠️ Technologies Used
 
 - Java 17
