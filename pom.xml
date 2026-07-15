@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.shreya</groupId>
+    <artifactId>notesphere</artifactId>
+    <version>1.0.0</version>
+
+    <name>NoteSphere</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Java Version -->
+        <maven.compiler.release>17</maven.compiler.release>
+    </properties>
+
+
+    <!-- ========================= -->
+    <!-- DEPENDENCIES -->
+    <!-- ========================= -->
+
+    <dependencies>
+
+        <!-- FlatLaf -->
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>3.6</version>
+        </dependency>
+
+
+        <!-- iText PDF -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext7-core</artifactId>
+            <version>8.0.5</version>
+            <type>pom</type>
+        </dependency>
+
+
+        <!-- JFreeChart -->
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <!-- ========================= -->
+    <!-- BUILD CONFIGURATION -->
+    <!-- ========================= -->
+
+    <build>
+
+        <plugins>
+
+            <!-- ========================= -->
+            <!-- JAVA COMPILER -->
+            <!-- ========================= -->
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+
+                <artifactId>
+                    maven-compiler-plugin
+                </artifactId>
+
+                <version>3.15.0</version>
+
+                <configuration>
+
+                    <release>17</release>
+
+                </configuration>
+
+            </plugin>
+
+
+            <!-- ========================= -->
+            <!-- CREATE RUNNABLE FAT JAR -->
+            <!-- ========================= -->
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+
+                <artifactId>
+                    maven-shade-plugin
+                </artifactId>
+
+                <version>3.6.0</version>
+
+                <executions>
+
+                    <execution>
+
+                        <phase>package</phase>
+
+                        <goals>
+
+                            <goal>shade</goal>
+
+                        </goals>
+
+                        <configuration>
+
+                            <!-- Keep final filename simple -->
+
+                            <finalName>
+                                NoteSphere
+                            </finalName>
+
+
+                            <!-- Do not create dependency-reduced pom -->
+
+                            <createDependencyReducedPom>
+                                false
+                            </createDependencyReducedPom>
+
+
+                            <transformers>
+
+                                <!-- Add Main-Class to MANIFEST.MF -->
+
+                                <transformer implementation=
+                                    "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+
+                                    <mainClass>com.shreya.ui.Main</mainClass>
+
+                                </transformer>
+
+                            </transformers>
+
+                        </configuration>
+
+                    </execution>
+
+                </executions>
+
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
